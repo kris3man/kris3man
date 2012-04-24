@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <nav>
+        <home>
+            <label>Home</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Welcome-to-Kris3man-Driving-Tuition</ident>
+            </params>
+            <route>article</route>
+        </home>
+         <about>
+            <label>About the Instructor</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>About-the-Instructor</ident>
+            </params>
+            <route>article</route>
+        </about>
+         <tesimonials>
+            <label>Tesimonials</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Testimonials</ident>
+            </params>
+            <route>article</route>
+        </tesimonials>
+    </nav>
+</config>

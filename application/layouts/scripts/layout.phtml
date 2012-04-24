@@ -1,0 +1,121 @@
+<?php echo $this->docType(); ?>
+<html lang="en">
+    <head>
+        <base href="<?= $this->baseUrl(); ?>/" />
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->headMeta(); ?>
+        <meta name="keywords" content="driving, tuition, lessons, courses, theory, driving test, driving school, driving lessons, driving courses, driving tuition, driving instructor, practical driving test, practical test, theory test, pass plus, instructor, kris3man, chris freeman, bedfordshire, bedfordshire driving schools, bedfordshire schools" />
+        <meta name="description" content="For the very best in driving lessons including theory test training and Pass Plus, call Kris3man Driving Tuition. We provide services for customers throughout Luton, Stevenage, Letchworth, Hitchin and the whole of Bedfordshire." />
+        <meta name="Content-Language" content="english" />
+        <meta name="Publisher" content="shaunfreeman.co.uk" />
+        <meta name="author" content="Shaun Freeman" />
+        <meta name="robots" content="index, follow" />
+        <meta name="revisit-after" content="14 days" />
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="general" />
+        <meta name="verify-v1" content="A1MDo7Uz1WA9WxlcOQsPfl/UBHQYkuQ2TPavUuRLk+U=" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+        <?= $this->headLink()
+                ->headLink(array(
+                    'rel'   => 'sitemap',
+                    'href'  => 'sitemap.xml',
+                    'title' => 'Sitemap'
+                ))
+                ->headLink(array(
+                    'rel'   => 'shortcut icon',
+                    'href'  => $this->baseUrl('userfiles/image/favicon.ico')
+                ))
+                ->appendStylesheet($this->baseUrl('css/siteStyles.css'))
+                ->appendStylesheet($this->baseUrl('css/template_css.css'))
+                ->appendStylesheet($this->baseUrl('css/MooFlow.css'));
+        ?>
+
+        <?= $this->headScript()
+                ->appendFile($this->baseUrl('js/kris3man.js'))
+                ->appendFile($this->baseUrl('js/api.js'));
+        ?>
+    </head>
+    <body>
+        <div>
+            <a id="ttop" name="ttop"><!-- --></a>
+            <div id="content">
+            	<div id="c_top">
+            		<div id="c_bot">
+            			<div id="top">
+            				<img src="<?= $this->baseUrl('userfiles/image/logo.png'); ?>" id="logo" alt="Logo" title="Logo" />
+            				<h1><!--Kris3man Driving Tuition -->
+            					<img src="<?= $this->baseUrl('userfiles/image/logo.gif'); ?>" alt="Kris3man Driving Tuition" title="Kris3man Driving Tuition" />
+            				</h1>
+            				<h2>&nbsp;&nbsp;Teaching Safe Driving for Life</h2>
+            				<div id="menu">
+            					<div id="uls">
+                                    <div class="moduletable">
+                                        <div class="moduletable">
+                                            <?= $this->siteMenu('topMenu')->setUlClass('mainmenu'); ?>
+                                        </div>
+                                    </div>
+            					</div>
+            				</div>
+            			</div>
+            			<div id="main">
+            				<div id="left_col">
+            					<div id="left_col_top">
+            						<div id="left_col_bot">
+            							<div class="moduletable">
+                                            <h3>
+                                                <span>Main Menu</span>
+                                            </h3>
+                                            <div id="MainMenu" class="moduletable_menu">
+                                                <?= $this->siteMenu('mainMenu')->setUlClass('menu'); ?>
+                                            </div>
+                                        </div>
+                                        <?= $this->widget('left', true); ?>
+            						</div>
+            					</div>
+            				</div>
+            				<div id="right_col">
+            					<div id="wrapper2">
+            						<?= $this->widget('right', true); ?>
+            					</div>
+            				</div>
+
+            				<div id="main_content">
+            					<div id="newsflash">
+            						<div id="nf_top">
+            							<div id="nf_bot">
+            								<?= $this->widget('banner ad', true); ?>
+            							</div>
+            						</div>
+            					</div>
+            					<div id="main_body">
+            						<div id="mb_top">
+            							<div id="mb_bot">
+            								<div id="ajax_content">
+            									<!-- content starts here -->
+            									<?= $this->Layout()->content; ?>
+            									<!-- content ends here -->
+            								</div>
+            								<div id="jump_top">
+            									<a class="smoothAnchors" href="#ttop">Jump to top</a>
+            								</div>
+            							</div>
+            						</div>
+            					</div>
+            				</div>
+            				<div class="both">
+            					<!-- -->
+            				</div>
+            			</div>
+            			<div id="footer">
+            				<p>&copy; Copyright <?= date('Y'); ?>&nbsp;Kris3man Driving Tuition. All Rights Reserved.<br />
+            				    Designed and Maintained by <a href="http://www.shaunfreeman.co.uk">Shaun Freeman</a>
+            				</p>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </body>
+</html>

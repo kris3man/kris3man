@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <nav>
+        <home>
+            <label>Home</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Welcome-to-Kris3man-Driving-Tuition</ident>
+            </params>
+            <route>article</route>
+        </home>
+        <about>
+            <label>About the Instructor</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>About-the-Instructor</ident>
+            </params>
+            <route>article</route>
+        </about>
+        <areas>
+            <label>Areas Covered</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Areas-Covered</ident>
+            </params>
+            <route>article</route>
+        </areas>
+        <vehicle>
+            <label>The Training Vehicle</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>The-Training-Vehicle</ident>
+            </params>
+            <route>article</route>
+        </vehicle>
+        <started>
+            <label>Getting Started</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Getting-Started</ident>
+            </params>
+            <route>article</route>
+        </started>
+        <prices>
+            <label>Lessons and Prices</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Lessons-and-Prices</ident>
+            </params>
+            <route>article</route>
+        </prices>
+        <syllabus>
+            <label>The Syllabus</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>The-Syllabus</ident>
+            </params>
+            <route>article</route>
+        </syllabus>
+        <passplus>
+            <label>Pass Plus</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Pass-Plus</ident>
+            </params>
+            <route>article</route>
+        </passplus>
+        <tests>
+            <label>Driving Tests</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Driving-Tests</ident>
+            </params>
+            <route>article</route>
+        </tests>
+        <lessons>
+            <label>Refresher Lessons</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Refresher-Lessons</ident>
+            </params>
+            <route>article</route>
+        </lessons>
+        <testimonials>
+            <label>Testimonials</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Testimonials</ident>
+            </params>
+            <route>article</route>
+        </testimonials>
+        <links>
+            <label>Links</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Links</ident>
+            </params>
+            <route>article</route>
+        </links>
+        <terms>
+            <label>Terms and Conditions</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Terms-and-Conditions</ident>
+            </params>
+            <route>article</route>
+        </terms>
+        <sitemap>
+            <label>Site Map</label>
+            <module>article</module>
+            <controller>index</controller>
+            <action>index</action>
+            <params>
+                <ident>Site-Map</ident>
+            </params>
+            <route>article</route>
+        </sitemap>
+    </nav>
+</config>
