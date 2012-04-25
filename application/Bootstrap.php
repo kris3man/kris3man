@@ -188,7 +188,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         Zend_Controller_Action_HelperBroker::addHelper(new ZendSF_Controller_Helper_Acl());
         Zend_Controller_Action_HelperBroker::addHelper(new ZendSF_Controller_Helper_Service());
         //Zend_Controller_Action_HelperBroker::addHelper(new ZendSF_Controller_Helper_SSL());
-        //Zend_Controller_Action_HelperBroker::addHelper(new ZendSF_Controller_Helper_MobileContext());
+        Zend_Controller_Action_HelperBroker::addHelper(new ZendSF_Controller_Helper_MobileContext());
     }
 
     /**

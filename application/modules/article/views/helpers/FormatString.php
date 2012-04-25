@@ -39,10 +39,22 @@
  */
 class Article_View_Helper_FormatString extends Zend_View_Helper_Abstract
 {
-    protected $_regex = '/(font-size:.*?;)|(color:.*?;)/';
+    protected $_regex = array(
+        '/(font-size:.*?;)|(color:.*?;)/',
+        '/<!-- start mobile remove -->.*?<!-- end mobile remove -->/s',
+        '/<img .*\/>/',
+        '/<noscript>/',
+        '/<\/noscript>/'
+    );
 
     public function formatString($str)
     {
-        return preg_replace($this->_regex, '', $str);
+        $filter = new Zend_Filter_PregReplace();
+        $filter->setMatchPattern($this->_regex)
+            ->setReplacement('');
+
+        $html = $filter->filter($str);
+
+        return $html;
     }
 }

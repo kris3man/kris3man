@@ -1,0 +1,140 @@
+<?php echo $this->docType(); ?>
+<html>
+	<head>
+        <base href="<?= $this->baseUrl(); ?>/" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+        <?php echo $this->headMeta(); ?>
+		<?php echo $this->headTitle(); ?>
+        <meta name="keywords" content="driving, tuition, lessons, courses, theory, driving test, driving school, driving lessons, driving courses, driving tuition, driving instructor, practical driving test, practical test, theory test, pass plus, instructor, kris3man, chris freeman, bedfordshire, bedfordshire driving schools, bedfordshire schools" />
+        <meta name="description" content="For the very best in driving lessons including theory test training and Pass Plus, call Kris3man Driving Tuition. We provide services for customers throughout Luton, Stevenage, Letchworth, Hitchin and the whole of Bedfordshire." />
+        <meta name="Content-Language" content="english" />
+		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js" data-dojo-config="async: true, mblAlwaysHideAddressBar: true, parseOnLoad: true"></script>
+		<script type="text/javascript">
+
+			require(["dojo/dom", "dojo/ready", "dojo/_base/fx", "dijit/_base/manager", "dojox/mobile/parser", "dojox/mobile", "dojox/mobile/deviceTheme", "dojo/domReady!", "dojox/mobile/TabBar", "dojox/mobile/ScrollableView", "dojox/mobile/Button", "dojox/mobile/Opener", "dojox/mobile/ContentPane"], function(dom, ready, fx) {
+				ready(function(){
+					setTimeout(function(){
+						var loader = dom.byId("loader");
+						fx.fadeOut({
+							node: loader,
+							duration: 500,
+							onEnd: function(){
+								loader.style.display = "none";
+							}
+						}).play();
+					}, 250);
+				});
+			});
+
+            function clicked(id) {
+                dijit.byId("actionSheet").hide();
+            }
+
+		</script>
+
+		<style type="text/css">
+			/* pre-loader specific stuff to prevent unsightly flash of unstyled content */
+			#loader {
+				padding:0;
+				margin:0;
+				position:absolute;
+				top:0; left:0;
+				width:100%; height:100%;
+				background:#efefef;
+				opacity: 0.98;
+				z-index:999;
+				vertical-align:middle;
+			}
+
+			#loaderInner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 32px;
+				height: 32px;
+				margin-top: -16px;
+				margin-left: -16px;
+				background-image: url('./images/loader_lg.gif');
+				background-repeat: no-repeat;
+			}
+
+            /* Tooltip styles */
+            .mblTooltip.mblOpener {
+                padding: 2px;
+                -webkit-box-shadow: 0 0 60px #808080;
+            }
+            .mblTooltip.mblOpener #cancel {
+                display: none;
+            }
+            .mblTooltip.mblOpener button {
+                margin: 4px;
+                width: 240px;
+                height: 40px;
+                -webkit-box-shadow: 0 1px 1px #343a4b;
+                font-size: 18px;
+                line-height: 38px;
+            }
+            /* Overlay styles */
+            .mblOverlay.mblOpener {
+                padding-top: 10px;
+                background-color: #60656f;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#a6abb4), to(#5b616c), color-stop(0.1, #7b808b), color-stop(0.1, #60656f));
+            }
+            .mblOverlay.mblOpener button {
+                margin: 5px;
+                width: 90%;
+                height: 44px;
+                border: 3px inset #3a3d43;
+                -webkit-border-radius: 12px;
+                -webkit-box-shadow: 0 1px 1px #787c84;
+                font-size: 18px;
+                line-height: 38px;
+            }
+            .mblOverlay.mblOpener #cancel {
+                margin: 15px 5px;
+                background-color: #293039; /* for non-webkit browser */
+                background-image: none; /* for non-webkit browser */
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#6d7278), to(#383f49), color-stop(0.5, #343c44), color-stop(0.5, #293039));
+                color: white;
+            }
+            .dj_bb button { /* BB BoxShadow Workaround */
+                -webkit-box-shadow: none !important;
+            }
+            #menu {
+                min-width: 150px;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="loader">
+            <div id="loaderInner"></div>
+        </div>
+
+		<div id="main" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
+            <h1 data-dojo-type="dojox.mobile.Heading" back="Menu" moveTo="menu1">
+                <?= $this->title; ?>
+                <div data-dojo-type="dojox.mobile.ToolBarButton" style="float:right;" moveTo="contacts">Contact Us</div>
+            </h1>
+
+            <div id="content" data-dojo-type="dojox.mobile.ScrollableView">
+                <div data-dojo-type="dojox.mobile.RoundRect" shadow="true">
+                    <?= $this->Layout()->content; ?>
+                </div>
+            </div>
+		</div>
+
+		<div id="contacts" data-dojo-type="dojox.mobile.View">
+		    <h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="main">Contact Us</h1>
+            <div data-dojo-type="dojox.mobile.RoundRect" shadow="true">
+                <?= $this->widget('Accordion'); ?>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div id="menu1" data-dojo-type="dojox.mobile.View">
+            <h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="main">Main Menu</h1>
+            <?= $this->siteMenu('mainMenu')->setPartial(array('mobileMenu.phtml', 'menu')); ?>
+        </div>
+	</body>
+</html>

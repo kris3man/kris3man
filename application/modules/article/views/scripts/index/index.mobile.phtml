@@ -1,1 +1,19 @@
+<? $this->headTitle($this->page->title); ?>
+<? $this->title = $this->page->title; ?>
+
+<? if ($this->page->getParam('show_cdate')): ?>
+<div class="createdate">
+    <?= $this->page->getCdate(); ?>
+</div>
+<? endif; ?>
+
+<div class="contentpaneopen">
 <?= $this->formatString($this->page->content); ?>
+</div>
+
+<? if ($this->page->getParam('show_mdate')): ?>
+<div class="modifydate">
+    Last Updated ( <?= $this->page->getMdate(); ?> )
+</div>
+<span class="article_separator"></span>
+<? endif; ?>

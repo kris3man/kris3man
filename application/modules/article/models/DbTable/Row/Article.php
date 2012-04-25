@@ -39,5 +39,38 @@
  */
 class Article_Model_DbTable_Row_Article extends ZendSF_Model_DbTable_Row_Abstract
 {
-    
+    /**
+     * @var array
+     */
+    private $_params;
+
+    public function getParams()
+    {
+        if (null === $this->_params) {
+            $this->_params = parse_ini_string($this->getRow()->params);
+        }
+
+        return $this;
+    }
+
+    public function getParam($param)
+    {
+        if (null === $this->_params) {
+            $this->getParams();
+        }
+
+        return $this->_params[$param];
+    }
+
+    public function getCdate($format = 'EEEE, dd MMMM YYYY h:mm a')
+    {
+        $date = new Zend_Date($this->getRow()->cdate);
+        return $date->toString($format);
+    }
+
+    public function getMdate($format = 'EEEE, dd MMMM YYYY h:mm a')
+    {
+        $date = new Zend_Date($this->getRow()->mdate);
+        return $date->toString($format);
+    }
 }

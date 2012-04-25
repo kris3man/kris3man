@@ -1,0 +1,17 @@
+assets/*
+!assets/htaccess
+scripts/*
+nbproject/*
+/*.log
+data/cache/*
+!data/cache/donotremove
+!data/cache/db
+data/cache/db/*
+!data/cache/db/donotremove
+data/wurfl/cache/*
+!data/wurfl/cache/donotremove
+data/logs/*
+!data/logs/donotremove
+public/.htaccess
+tests/tmp/db/*
+tests/tmp/session/*

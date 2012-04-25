@@ -1,0 +1,19 @@
+<?php
+
+echo '<ul data-dojo-type="dojox.mobile.RoundRectList">';
+
+$html = array();
+
+/* @var $page Zend_Navigation_Page */
+foreach ($this->container as $page)
+{
+    $params = $page->getParams();
+
+    $html[] = '<li data-dojo-type="dojox.mobile.ListItem" href="' . $page->getHref() . '">';
+    $html[] = $page->getLabel();
+    $html[] = '</li>';
+}
+
+echo join(PHP_EOL, $html);
+
+echo '</ul>';

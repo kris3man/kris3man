@@ -51,8 +51,12 @@ class Article_IndexController extends Zend_Controller_Action
     {
         $this->_model = new Article_Model_Article();
 
-        //$mobileContext = $this->_helper->getHelper('MobileContext');
-        //$mobileContext->addActionContext('index')->initContext();
+        $mobileContext = $this->_helper->getHelper('MobileContext');
+        $mobileContext->addActionContext('index')->initContext();
+
+        if ($this->getRequest()->isXmlHttpRequest()) {
+            $this->_helper->layout->disableLayout();
+        }
     }
 
     /**
@@ -65,10 +69,7 @@ class Article_IndexController extends Zend_Controller_Action
                 ->frontpage;
         $ident = $this->getRequest()->getParam('ident', $defaultArticle);
 
-        //$this->_helper->viewRenderer->setNoRender(true);
-
-        $this->view->page = $this->_model->getArticleByIdent($ident);
-        //$this->view->mainTitle = $this->view->page->getTitle();
+        $this->view->page = $this->_model->getCached('article')->getArticleByIdent($ident);
     }
 
 }
