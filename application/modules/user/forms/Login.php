@@ -3,7 +3,7 @@
 class User_Form_Login extends ZendSF_Form_Abstract
 {
     public function init()
-    {               
+    {
         $this->addElement('text', 'email', array(
             'filters'    => array('StringTrim', 'StringToLower'),
             'validators' => array(
@@ -13,8 +13,8 @@ class User_Form_Login extends ZendSF_Form_Abstract
             'required'   => true,
             'label'      => 'Email',
         ));
-        
-        $this->addElement('password', 'passwd', array(
+
+        $this->addElement('password', 'password', array(
             'filters'    => array('StringTrim'),
             'validators' => array(
                 array('StringLength', true, array(6, 128))
@@ -28,7 +28,7 @@ class User_Form_Login extends ZendSF_Form_Abstract
             'ignore'   => true,
             'label'    => 'Login',
         ));
-        
+
         $this->setDecorators(array(
             'FormElements',
             array('HtmlTag', array('tag' => 'dl', 'class' => 'zend_form')),

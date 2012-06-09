@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <nav>
+        <article>
+            <label>Article</label>
+            <data-dojo-props>
+                <onClick>sf.Admin().tabCreate</onClick>
+            </data-dojo-props>
+            <module>article</module>
+            <controller>admin</controller>
+            <route>admin</route>
+            <resource>Admin</resource>
+        </article>
+        <help>
+            <label>Help</label>
+            <data-dojo-props></data-dojo-props>
+            <pages>
+                <bug>
+                    <label>Report a bug</label>
+                    <data-dojo-props></data-dojo-props>
+                    <route>admin</route>
+                    <resource>Admin</resource>
+                </bug>
+                <email>
+                    <label>Email Support</label>
+                    <data-dojo-props></data-dojo-props>
+                    <route>admin</route>
+                    <resource>Admin</resource>
+                </email>
+                <seperator>
+                    <label>-</label>
+                    <data-dojo-props></data-dojo-props>
+                    <route>admin</route>
+                    <resource>Admin</resource>
+                </seperator>
+                <about>
+                    <label>About</label>
+                    <data-dojo-props></data-dojo-props>
+                    <route>admin</route>
+                    <resource>Admin</resource>
+                </about>
+            </pages>
+            <route>admin</route>
+            <resource>Admin</resource>
+        </help>
+        <logout>
+            <label>Logout</label>
+            <data-dojo-props>
+                <onClick>sf.Admin().menuClick</onClick>
+            </data-dojo-props>
+            <action>logout</action>
+            <route>user</route>
+            <resource>Admin</resource>
+        </logout>
+    </nav>
+</config>

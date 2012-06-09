@@ -1,6 +1,6 @@
 <?php
 /**
- * AdminController.php
+ * Role.php
  *
  * Copyright (c) 2011 Shaun Freeman <shaun@shaunfreeman.co.uk>.
  *
@@ -20,38 +20,33 @@
  * along with SF.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category   SF
- * @package    Article
- * @subpackage Controller
+ * @package    User
+ * @subpackage Model
  * @copyright  Copyright (c) 2011 Shaun Freeman. (http://www.shaunfreeman.co.uk)
  * @license    http://www.gnu.org/licenses GNU General Public License
  * @author     Shaun Freeman <shaun@shaunfreeman.co.uk>
  */
 
 /**
- * Controller Class AdminController.
+ * DAO to represent a single Role.
  *
  * @category   SF
- * @package    Article
- * @subpackage Controller
+ * @package    User
+ * @subpackage Model
  * @copyright  Copyright (c) 2011 Shaun Freeman. (http://www.shaunfreeman.co.uk)
  * @license    http://www.gnu.org/licenses GNU General Public License
  * @author     Shaun Freeman <shaun@shaunfreeman.co.uk>
  */
-class Article_AdminController extends Zend_Controller_Action
+class User_Model_DbTable_Role extends ZendSF_Model_DbTable_Abstract
 {
-    public function init()
-    {
-        if ($this->getRequest()->isXmlHttpRequest()) {
-            $this->_helper->layout->disableLayout();
-        }
-    }
+    protected $_name = 'userRole';
+    protected $_primary = 'roleId';
+    protected $_rowClass = 'User_Model_DbTable_Row_Role';
 
-    public function indexAction()
-    {
-        if (!$this->_helper->acl('Admin')) {
-            return $this->_forward('login', 'admin', 'user');
-            //throw new ZendSF_Exception('Access denied');
-        }
-    }
+    protected $_dependentTables = array('User_Model_DbTable_User');
 
+    public function getRoleById($id)
+    {
+        return $this->find($id)->current();
+    }
 }

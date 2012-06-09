@@ -1,0 +1,90 @@
+<?= $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <?= $this->headMeta(); ?>
+        <?= $this->headTitle(); ?>
+        <?= $this->headStyle(); ?>
+        <?= $this->headLink()
+                ->appendStylesheet('http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/grid/resources/Grid.css')
+                ->appendStylesheet('http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/grid/resources/claroGrid.css')
+                ->appendStylesheet($this->baseUrl('/css/admin.css')); ?>
+
+        <?= $this->dojo()
+                ->requireModule(array(
+                    'dijit.Calendar',
+                    'dijit.Dialog',
+
+                    'dijit.layout.BorderContainer',
+                    'dijit.layout.TabContainer',
+                    'dijit.layout.ContentPane',
+                    'dijit.layout.AccordionContainer',
+                    'dijit.layout.LinkPane',
+
+                    'dijit.Menu',
+                    'dijit.MenuBar',
+                    'dijit.MenuBarItem',
+                    'dijit.MenuItem',
+                    'dijit.MenuSeparator',
+                    'dijit.PopupMenuBarItem',
+                    'dijit.PopupMenuItem',
+
+                    'dojox.grid.DataGrid',
+                    'dojox.data.QueryReadStore',
+
+                )); ?>
+
+        <?= $this->headScript()
+                ->appendFile($this->baseUrl('/js/Admin.js')); ?>
+    </head>
+    <body class="claro">
+        <div id="loader">
+            <div id="loaderInner"></div>
+        </div>
+
+        <div id="appLayout"
+             data-dojo-type="dijit.layout.BorderContainer"
+             data-dojo-props="design: 'sidebar', gutters: 'false'">
+
+            <div id="AdminTabs"
+                 class="centerPanel"
+                 data-dojo-type="dijit.layout.TabContainer"
+                 data-dojo-props="region: 'center', tabStrip: 'true', gutters: 'false'">
+
+                <? if (!$this->authInfo('role')): ?>
+                <?= $this->Layout()->content; ?>
+                <? endif; ?>
+
+            </div>
+
+            <?= $this->navigation()->dojoMenuBar()->render(); ?>
+
+            <div id="leftCol" class="edgePanel"
+                data-dojo-type="dijit.layout.BorderContainer"
+                data-dojo-props="region: 'left', design: 'headline', splitter: true, gutters: 'false'">
+
+                <div id="leftColTop"
+                     data-dojo-type="dijit.layout.ContentPane"
+                     data-dojo-props="region: 'top'">
+                    <a href="http://www.shaunfreeman.co.uk">
+                        <img src="./images/logo_125x70.png" />
+                    </a>
+                </div>
+
+                <div data-dojo-type="dijit.layout.AccordionContainer"
+                     data-dojo-props="region: 'center'">
+
+                    <div data-dojo-type="dijit.layout.ContentPane"
+                         data-dojo-props="title: 'User Details'">
+                    </div>
+
+                    <div data-dojo-type="dijit.layout.ContentPane"
+                         data-dojo-props="title: 'Calendar'">
+                        <div data-dojo-type="dijit.Calendar"
+                             data-dojo-props="value: new Date()"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

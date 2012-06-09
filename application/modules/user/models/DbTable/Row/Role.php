@@ -1,6 +1,6 @@
 <?php
 /**
- * AdminController.php
+ * Role.php
  *
  * Copyright (c) 2011 Shaun Freeman <shaun@shaunfreeman.co.uk>.
  *
@@ -20,38 +20,24 @@
  * along with SF.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @category   SF
- * @package    Article
- * @subpackage Controller
+ * @package    User
+ * @subpackage Model_DbTable_Row
  * @copyright  Copyright (c) 2011 Shaun Freeman. (http://www.shaunfreeman.co.uk)
  * @license    http://www.gnu.org/licenses GNU General Public License
  * @author     Shaun Freeman <shaun@shaunfreeman.co.uk>
  */
 
 /**
- * Controller Class AdminController.
+ * Database class for the Role table row.
  *
  * @category   SF
- * @package    Article
- * @subpackage Controller
+ * @package    User
+ * @subpackage Model_DbTable_Row
  * @copyright  Copyright (c) 2011 Shaun Freeman. (http://www.shaunfreeman.co.uk)
  * @license    http://www.gnu.org/licenses GNU General Public License
  * @author     Shaun Freeman <shaun@shaunfreeman.co.uk>
  */
-class Article_AdminController extends Zend_Controller_Action
+class User_Model_DbTable_Row_Role extends ZendSF_Model_DbTable_Row_Abstract
 {
-    public function init()
-    {
-        if ($this->getRequest()->isXmlHttpRequest()) {
-            $this->_helper->layout->disableLayout();
-        }
-    }
-
-    public function indexAction()
-    {
-        if (!$this->_helper->acl('Admin')) {
-            return $this->_forward('login', 'admin', 'user');
-            //throw new ZendSF_Exception('Access denied');
-        }
-    }
 
 }
